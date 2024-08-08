@@ -1,14 +1,14 @@
 # Voice Conversion With XNOT (XNOT-VC)
 
 Добавлены и изменены:
--папка data
-    -female_3112.flac - файл исходного домена
-    -male.flac - файл целевого домена
-    -hifi_gan_test.flac - файл с тестированием работы HiFiGan (работает)
-    -valid.flac - файл для валидации
-    -xnot_vc_test.flac - файл со звуковой дорожкой, полученной с помощью xnot (на данный момент - это шум)
--matcher.py (инициализирован, но не дописан класс ExNOT. Пока что весь основной коб в jupyter notebook)
--xnotvc.ipynb - ноутбук с кодом для XNOT-VC
+- папка data
+    - female_3112.flac - файл исходного домена
+    - male.flac - файл целевого домена
+    - hifi_gan_test.flac - файл с тестированием работы HiFiGan (работает)
+    - valid.flac - файл для валидации
+    - xnot_vc_test.flac - файл со звуковой дорожкой, полученной с помощью xnot (на данный момент - это шум)
+- matcher.py (инициализирован, но не дописан класс ExNOT. Пока что весь основной коб в jupyter notebook)
+- xnotvc.ipynb - ноутбук с кодом для XNOT-VC
 --------------------------------------------------------------------------------------------
 # Voice Conversion With Just Nearest Neighbors (kNN-VC)
 
