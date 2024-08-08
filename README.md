@@ -1,3 +1,15 @@
+# Voice Conversion With XNOT (XNOT-VC)
+
+Добавлены и изменены:
+-папка data
+    -female_3112.flac - файл исходного домена
+    -male.flac - файл целевого домена
+    -hifi_gan_test.flac - файл с тестированием работы HiFiGan (работает)
+    -valid.flac - файл для валидации
+    -xnot_vc_test.flac - файл со звуковой дорожкой, полученной с помощью xnot (на данный момент - это шум)
+-matcher.py (инициализирован, но не дописан класс ExNOT. Пока что весь основной коб в jupyter notebook)
+-xnotvc.ipynb - ноутбук с кодом для XNOT-VC
+--------------------------------------------------------------------------------------------
 # Voice Conversion With Just Nearest Neighbors (kNN-VC)
 
 The official code repo! This repo contains training and inference code for kNN-VC -- an any-to-any voice conversion model from our paper, "Voice Conversion With Just k-Nearest Neighbors". The trained checkpoints are available under the 'Releases' tab and through `torch.hub`. 
