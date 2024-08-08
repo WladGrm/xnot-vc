@@ -14,12 +14,12 @@ from torch.nn.parallel import DistributedDataParallel
 from torch.utils.data import DataLoader, DistributedSampler
 from torch.utils.tensorboard import SummaryWriter
 
-from .meldataset import (LogMelSpectrogram, MelDataset, get_dataset_filelist,
+from meldataset import (LogMelSpectrogram, MelDataset, get_dataset_filelist,
                          mel_spectrogram)
-from .models import (Generator, MultiPeriodDiscriminator,
+from models import (Generator, MultiPeriodDiscriminator,
                      MultiScaleDiscriminator, discriminator_loss, feature_loss,
                      generator_loss)
-from .utils import (AttrDict, build_env, load_checkpoint, plot_spectrogram,
+from utils import (AttrDict, build_env, load_checkpoint, plot_spectrogram,
                     save_checkpoint, scan_checkpoint)
 
 torch.backends.cudnn.benchmark = True
@@ -293,10 +293,10 @@ def main():
     parser = argparse.ArgumentParser()
 
     parser.add_argument('--group_name', default=None)
-    parser.add_argument('--audio_root_path', required=True)
-    parser.add_argument('--feature_root_path', required=True)
-    parser.add_argument('--input_training_file', default='LJSpeech-1.1/training.txt')
-    parser.add_argument('--input_validation_file', default='LJSpeech-1.1/validation.txt')
+    parser.add_argument('--audio_root_path', required=False)
+    parser.add_argument('--feature_root_path', required=False)
+    parser.add_argument('--input_training_file', default='../data_splits/wavlm-hifigan-train.csv')
+    parser.add_argument('--input_validation_file', default='../data_splits/wavlm-hifigan-valid.csv')
     parser.add_argument('--checkpoint_path', default='cp_hifigan')
     parser.add_argument('--config', default='')
     parser.add_argument('--training_epochs', default=1500, type=int)
