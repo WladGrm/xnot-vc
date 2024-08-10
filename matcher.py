@@ -25,7 +25,7 @@ class ExNOTVC(nn.Module):
         wavlm: WavLM,
         hifigan: HiFiGAN,
         hifigan_cfg: AttrDict,
-        device='cuda'
+        device='xpu'
     ) -> None:
         """ -VC matcher. 
         Arguments:
@@ -178,7 +178,7 @@ class KNeighborsVC(nn.Module):
         wavlm: WavLM,
         hifigan: HiFiGAN,
         hifigan_cfg: AttrDict,
-        device='cuda'
+        device='xpu'
     ) -> None:
         """ kNN-VC matcher. 
         Arguments:
@@ -226,7 +226,7 @@ class KNeighborsVC(nn.Module):
         on start/end with `vad_trigger_level`.
         """
         # load audio
-        if weights == None: weights = self.weighting
+        if weights == None: weights = self.weighting.to(torch.float32)
         if type(path) in [str, Path]:
             x, sr = torchaudio.load(path, normalize=True)
         else:
@@ -265,6 +265,7 @@ class KNeighborsVC(nn.Module):
             features = torch.cat([x.transpose(0, 1) for x, _ in layer_results], dim=0) # (n_layers, seq_len, dim)
             # save full sequence
             features = ( features*weights[:, None] ).sum(dim=0) # (seq_len, dim)
+        
         
         return features
 

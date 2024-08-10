@@ -1,7 +1,7 @@
 import numpy as np
 
 def generate_matrix_from_index(A, len=25):
-    matrix = np.zeros(len, dtype=float)
+    matrix = np.zeros(len, dtype=np.float32)
     matrix[A] = 1
     return matrix
 
