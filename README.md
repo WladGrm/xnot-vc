@@ -1,5 +1,7 @@
 # Voice Conversion With XNOT (XNOT-VC)
 
+[Презентация с защиты проекта SMILES 2024](https://docs.google.com/presentation/d/1rJkkKsenwbj16IApPACik29CPeAVKOMkhpR33Ii-olA/edit)
+
 Добавлены и изменены:
 - папка checkpoints - сохраненные модели
 - папка data:
